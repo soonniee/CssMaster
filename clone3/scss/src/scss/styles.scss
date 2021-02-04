@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import "_titles";
+@import "_variables";
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat";
+  display: grid;
+  height: 100vh;
+  background-color: #af7832;
+  color: #af7832;
+  font-weight: 500;
+  font-size: 20px;
+  // grid-template-columns: 1.4fr 1fr 1.4fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  gap: 1px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+header {
+  grid-area: header;
+  nav {
+    height: 100%;
+  }
+  ul {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.4fr;
+    gap: 1px;
+    align-items: center;
+
+    li {
+      height: 100%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:nth-child(3) {
+        cursor: pointer;
+        &:hover {
+          background-color: #af7832;
+          color: white;
+        }
+      }
+    }
+  }
+}
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  gap: 1px;
+  .number__row {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1px;
+    cursor: pointer;
+    .number {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      &:hover {
+        background-color: #af7832;
+        color: white;
+      }
+    }
+  }
+  .center__image {
+    background-image: url("https://images.unsplash.com/photo-1612361814394-35785ba16dc3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=702&q=80");
+    background-size: cover;
+    background-position: center;
+  }
+}
+footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  gap: 1px;
+  span {
+    background-color: white;
+  }
+  .text {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: uppercase;
+    span {
+      animation: scrollText 5s linear infinite forwards;
+    }
+  }
+}
+@keyframes scrollText {
+  0% {
+    transform: translateX(-150px);
+  }
+  50% {
+    transform: translateX(150px);
+  }
+  100% {
+    transform: translateX(-150px);
+  }
+}
